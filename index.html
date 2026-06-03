@@ -4,23 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="images/logo.png">
-<meta property="og:title"
-content="AGNI SAMRAJYAM SEASON II">
-
-<meta property="og:description"
-content="India's Ultimate Minecraft Anarchy PvP Server">
-
-<meta property="og:image"
-content="https://agni-samrajyam.netlify.app/images/banner.png">
-
-<meta property="og:url"
-content="https://agni-samrajyam.netlify.app">
-
-<meta property="og:type"
-content="website">
 <title>AGNI SAMRAJYAM SEASON II</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
+#particles{
+position:fixed;
+inset:0;
+z-index:-1;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Poppins,sans-serif;
@@ -112,7 +103,7 @@ margin-top:60px;
 </style>
 </head>
 <body>
-  <div id="particles"></div>
+<div id="particles"></div>
 
 <nav>
 <div class="logo-wrap">
@@ -195,6 +186,7 @@ margin-top:60px;
 <p>Rule the Kingdom. Or Burn With It.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 <script>
 fetch("https://api.mcsrvstat.us/3/play.agnimc.fun")
 .then(r=>r.json())
@@ -209,6 +201,31 @@ el.innerHTML="🔴 Server Offline";
 .catch(()=>{
 document.getElementById("status").innerHTML="Unable to fetch status.";
 });
+</script>
+<script>
+
+tsParticles.load("particles",{
+particles:{
+number:{
+value:50
+},
+color:{
+value:[
+"#ff6b35",
+"#8b5cf6",
+"#06b6d4"
+]
+},
+move:{
+enable:true,
+speed:1
+},
+size:{
+value:2
+}
+}
+});
+
 </script>
 
 </body>
